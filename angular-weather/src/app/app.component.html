@@ -1,2 +1,11 @@
-<h1>Weather dashboard</h1>
+<mat-toolbar color="primary">
+  <mat-icon>thermostat</mat-icon>
+  <span>Сиверский</span>
+
+  <div class="navigation">
+    <a class="nav-link" routerLink="/weather" routerLinkActive="active">Погода</a>
+    <a class="nav-link" routerLink="/archive" routerLinkActive="active">Архив погоды</a>
+  </div>
+</mat-toolbar>
+
 <router-outlet></router-outlet>

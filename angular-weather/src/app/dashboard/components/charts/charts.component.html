@@ -1,0 +1,12 @@
+<div *ngIf="chartOptions.datasets.length && chartOptions.labels.length">
+  <canvas mdbChart
+          [chartType]="chartOptions.chartType"
+          [datasets]="chartOptions.datasets"
+          [labels]="chartOptions.labels"
+
+          [options]="chartOptions.options"
+          [legend]="true"
+
+          >
+  </canvas>
+</div>

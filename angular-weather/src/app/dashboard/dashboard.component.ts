@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from "../services/data.service";
+
+import { SETTINGS } from "./contants";
 
 @Component({
   selector: 'app-dashboard',
@@ -7,15 +8,20 @@ import { DataService } from "../services/data.service";
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+  public settings = SETTINGS;
+  public currentSettings = {
+    dashboard: {
+      positionClass: SETTINGS.dashboard.positionClassDefault
+    }
+  };
 
-  constructor(private dataService: DataService) {
+  constructor() {
   }
 
   ngOnInit(): void {
-    this.dataService.getWeatherData()
-      .subscribe(data => {
-        console.log(data);
-      })
   }
 
+  public togglePosition() {
+    this.currentSettings.dashboard.positionClass = SETTINGS.dashboard.positionClasses.find(i => i !== this.currentSettings.dashboard.positionClass) || SETTINGS.dashboard.positionClassDefault;
+  }
 }

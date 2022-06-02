@@ -1,1 +1,8 @@
-<p>dashboard works!</p>
+<div class="dashboard mt20" [class]="currentSettings.dashboard.positionClass">
+  <div class="dashboard__sidebar">
+    <app-sidebar [currentSettings]="currentSettings" (togglePosition)="togglePosition()"></app-sidebar>
+  </div>
+  <div class="dashboard__content">
+    <app-charts></app-charts>
+  </div>
+</div>

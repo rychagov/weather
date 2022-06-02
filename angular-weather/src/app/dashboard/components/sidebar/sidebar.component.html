@@ -1,0 +1,46 @@
+<div class="sidebar" [ngClass]="{'sidebar-h' : currentSettings.dashboard.positionClass === 'dashboard-row','sidebar-v' : currentSettings.dashboard.positionClass === 'dashboard-column'}">
+  <div class="controls">
+    <a (click)="togglePosition.emit()">
+      ICON
+    </a>
+  </div>
+
+  <div class="form">
+    <form [formGroup]="filterForm" (ngSubmit)="onSubmit()">
+      <mat-form-field *ngIf="calendar.years.length">
+        <mat-select placeholder="Год" formControlName="year">
+          <mat-option *ngFor="let year of calendar.years" [value]="year">
+            {{ year }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+      <mat-form-field *ngIf="calendar.months.length">
+        <mat-select placeholder="Месяц" formControlName="month">
+          <mat-option *ngFor="let month of calendar.months" [value]="month">
+            {{ month | month }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+      <mat-form-field *ngIf="calendar.days.length">
+        <mat-select placeholder="День" formControlName="day">
+          <mat-option *ngFor="let day of calendar.days" [value]="day">
+            {{ day }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <i class="divider"></i>
+
+      Weather settings here
+
+      <i class="divider"></i>
+
+      <button mat-stroked-button type="submit" [disabled]="!currentYear">Показать</button>
+    </form>
+  </div>
+
+
+
+</div>

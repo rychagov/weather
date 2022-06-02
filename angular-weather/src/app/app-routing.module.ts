@@ -2,15 +2,9 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 
 const routes: Routes = [
-  {
-    path: 'dashboard',
-    loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
-  },
-  {
-    path: '',
-    redirectTo: 'dashboard',
-    pathMatch: 'full'
-  }
+  { path: 'archive',loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule) },
+  { path: 'weather', loadChildren: () => import('./weather/weather.module').then(m => m.WeatherModule) },
+  { path: '', redirectTo: 'weather', pathMatch: 'full' },
 ];
 
 @NgModule({

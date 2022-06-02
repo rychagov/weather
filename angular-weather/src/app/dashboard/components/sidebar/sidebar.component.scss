@@ -1,0 +1,29 @@
+.sidebar {
+  background: #fff;
+  min-width: 240px;
+  height: 100%;
+  display: flex;
+
+  &.sidebar-h {
+    flex-direction: column;
+    justify-content: flex-start;
+
+    .divider {
+      display:block;
+      width: 100%;
+      border-top: 1px solid #ddd;
+      margin: 8px 0;
+    }
+  }
+}
+
+.controls {
+  padding: 5px 10px;
+  display: flex;
+  background: #ddd;
+  justify-content: flex-end;
+}
+
+.form {
+  padding: 10px 15px;
+}
